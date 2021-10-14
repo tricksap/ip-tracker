@@ -1,12 +1,55 @@
 * {
   margin: 0;
+  font-family: "Rubik", sans-serif;
+  text-align: center;
 }
+
+h1 {
+  padding: 2%;
+  color: white;
+}
+
 .leaflet-container {
   width: 100vw;
-  height: 75vh;
+  height: 70vh;
 }
 
 .upper {
   background-color: aquamarine;
-  height: 25vh;
+  height: 30vh;
+}
+
+.overlay {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  margin-left: -50px;
+  background-color: white;
+  height: auto;
+  width: auto;
+  z-index: 10000;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  text-align: center;
+}
+
+.flex-item-left {
+  background-color: #f1f1f1;
+  padding: 10px;
+  flex: 50%;
+}
+.flex-item-middle {
+  background-color: dodgerblue;
+  padding: 10px;
+  flex: 50%;
+}
+
+.flex-item-right {
+  background-color: #f1f1f1;
+  padding: 10px;
+  flex: 50%;
 }
