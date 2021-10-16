@@ -3,10 +3,33 @@
   font-family: "Rubik", sans-serif;
   text-align: center;
 }
+body {
+  font-size: 18px;
+}
 
 h1 {
+  font-size: 30px;
   padding: 2%;
   color: white;
+}
+
+input[type="text"] {
+  width: 30%;
+  height: 40px;
+  padding-right: 50px;
+  border: 0px;
+  border-radius: 15px;
+}
+
+.button {
+  margin-left: -30px;
+  height: 45px;
+  width: 43px;
+  border: 0px;
+  border-radius: 15px;
+  background-color: black;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 .leaflet-container {
@@ -15,41 +38,31 @@ h1 {
 }
 
 .upper {
-  background-color: aquamarine;
   height: 30vh;
+  background-image: url(./images/pattern-bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
-
 .overlay {
   position: absolute;
   top: 25%;
-  left: 50%;
-  margin-left: -50px;
+  margin-left: 14%;
   background-color: white;
   height: auto;
-  width: auto;
+  width: 75%;
+  border-radius: 15px;
+  padding: 20px;
   z-index: 10000;
 }
 
 .flex-container {
   display: flex;
   flex-direction: row;
-  font-size: 30px;
   text-align: center;
+  justify-content: space-evenly;
 }
 
-.flex-item-left {
-  background-color: #f1f1f1;
-  padding: 10px;
-  flex: 50%;
-}
-.flex-item-middle {
-  background-color: dodgerblue;
-  padding: 10px;
-  flex: 50%;
-}
-
-.flex-item-right {
-  background-color: #f1f1f1;
+.flex-item {
   padding: 10px;
   flex: 50%;
 }
