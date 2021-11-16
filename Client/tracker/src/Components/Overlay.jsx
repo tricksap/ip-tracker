@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../style.css";
 
 function Overlay() {
+  const [Info, setInfo] = useState({});
+  useEffect(() => {
+    axios.get("http://localhost:3001/").then(function (response) {
+      console.log(response);
+    });
+  }, [Info]);
+
   return (
     <div className="overlay">
       <div class="flex-container">
