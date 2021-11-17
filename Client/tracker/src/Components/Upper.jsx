@@ -7,11 +7,10 @@ function Upper() {
 
   function createPost(e) {
     e.preventDefault();
-    // console.log(address);
     axios
       .post("http://localhost:3001/", { address: address })
       .then((response) => {
-        console.log(response);
+        console.log(response.data);
       });
   }
 

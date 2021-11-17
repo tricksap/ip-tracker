@@ -3,12 +3,11 @@ import axios from "axios";
 import "../style.css";
 
 function Overlay() {
-  const [Info, setInfo] = useState({});
   useEffect(() => {
     axios.get("http://localhost:3001/").then(function (response) {
-      console.log(response);
+      console.log(response.data);
     });
-  }, [Info]);
+  }, []);
 
   return (
     <div className="overlay">

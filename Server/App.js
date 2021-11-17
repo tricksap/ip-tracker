@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var str = "";
+var str = {};
 
 app.get("/", cors(), function (req, res) {
   res.send(str);
@@ -23,7 +23,7 @@ app.post("/", function (req, res) {
   https
     .get(url, function (response) {
       response.on("data", function (chunk) {
-        str += chunk;
+        str = JSON.parse(chunk);
       });
       response.on("end", function () {
         console.log(str);
