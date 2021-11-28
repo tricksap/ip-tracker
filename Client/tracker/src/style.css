@@ -3,8 +3,9 @@
   font-family: "Rubik", sans-serif;
   text-align: center;
 }
-body {
+body span {
   font-size: 18px;
+  color: black;
 }
 
 h1 {
@@ -14,7 +15,7 @@ h1 {
 }
 
 input[type="text"] {
-  width: 30%;
+  width: 63%;
   height: 40px;
   padding-right: 50px;
   border: 0px;
@@ -45,6 +46,7 @@ input[type="text"] {
 }
 .overlay {
   position: absolute;
+
   top: 25%;
   margin-left: 14%;
   background-color: white;
@@ -63,6 +65,20 @@ input[type="text"] {
 }
 
 .flex-item {
+  color: hsl(0, 0%, 59%);
+  font-size: 12px;
   padding: 10px 0px;
   flex: 50%;
+}
+
+@media screen and (max-width: 750px) {
+  .overlay {
+    width: 85%;
+    margin-left: 8%;
+    top: 17%;
+    padding: 0 0;
+  }
+  .flex-container {
+    flex-direction: column;
+  }
 }
