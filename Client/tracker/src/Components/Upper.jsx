@@ -2,16 +2,30 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../style.css";
 
-function Upper() {
+function Upper(props) {
   const [address, setAddress] = useState("");
 
   function createPost(e) {
-    e.preventDefault();
     axios
       .post("http://localhost:3001/", { address: address })
       .then((response) => {
         console.log(response.data);
       });
+    e.preventDefault();
+    getPost();
+  }
+
+  function getPost() {
+    axios.get("http://localhost:3001/").then(function (response) {
+      props.onAdd({
+        Add: response.data.ip,
+        Loc: response.data.location.city,
+        TimeZone: response.data.location.timezone,
+        Isp: response.data.isp,
+        Lat: response.data.location.lat,
+        Long: response.data.location.lng,
+      });
+    });
   }
 
   return (

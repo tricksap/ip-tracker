@@ -1,33 +1,26 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import "../style.css";
 
-function Overlay() {
-  useEffect(() => {
-    axios.get("http://localhost:3001/").then(function (response) {
-      console.log(response.data);
-    });
-  }, []);
-
+function Overlay(props) {
   return (
     <div className="overlay">
       <div class="flex-container">
         <p class="flex-item">
           Address <br />
-          <span>--</span>
+          <span>{props.add}</span>
         </p>
         <p class="flex-item">
           Location <br />
-          <span>--</span>
+          <span>{props.loc}</span>
         </p>
         <p class="flex-item">
           Timezone <br />
-          <span>--</span>
+          <span>{props.timeZone}</span>
         </p>
         <p class="flex-item">
           ISP
           <br />
-          <span>--</span>
+          <span>{props.ISP}</span>
         </p>
       </div>
     </div>
