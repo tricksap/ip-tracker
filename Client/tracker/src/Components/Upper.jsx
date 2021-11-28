@@ -9,23 +9,16 @@ function Upper(props) {
     axios
       .post("http://localhost:3001/", { address: address })
       .then((response) => {
-        console.log(response.data);
+        props.onAdd({
+          Add: response.data.ip,
+          Loc: response.data.location.city,
+          TimeZone: response.data.location.timezone,
+          Isp: response.data.isp,
+          Lat: response.data.location.lat,
+          Long: response.data.location.lng,
+        });
       });
     e.preventDefault();
-    getPost();
-  }
-
-  function getPost() {
-    axios.get("http://localhost:3001/").then(function (response) {
-      props.onAdd({
-        Add: response.data.ip,
-        Loc: response.data.location.city,
-        TimeZone: response.data.location.timezone,
-        Isp: response.data.isp,
-        Lat: response.data.location.lat,
-        Long: response.data.location.lng,
-      });
-    });
   }
 
   return (

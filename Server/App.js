@@ -10,10 +10,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var str = {};
 
-app.get("/", cors(), function (req, res) {
-  res.send(str);
-});
-
 app.post("/", function (req, res) {
   var ip = req.body.address;
   var url =
@@ -30,6 +26,7 @@ app.post("/", function (req, res) {
       });
     })
     .end();
+  res.send(str);
 });
 
 app.listen(3001, function () {
